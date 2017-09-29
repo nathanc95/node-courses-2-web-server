@@ -21,12 +21,16 @@ app.use((req,res,next)=>{
   next();
 });
 
-app.use((req,res,next)=>{
+/*app.use((req,res,next)=>{
   req.get='/';
   res.render('maintenance.hbs',{
 
   });
   next();
+});*/
+
+app.get('/projects',(req,res)=>{
+  res.render('projects.hbs');
 });
 
 hbs.registerHelper('getCurrentYear',()=>{
@@ -43,6 +47,8 @@ app.get('/',(req,res)=>{
     welcomeUser:'hello you'
   });
 });
+
+
 app.get('/about',(req,res)=>{
   res.render('about.hbs',{
     pageTitle:'About page',
